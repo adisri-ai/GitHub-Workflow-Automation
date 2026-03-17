@@ -15,7 +15,7 @@ def plan_task(user_input: str):
         payload = {
                     "text" : user_input
                 }        
-        url = "https://calycate-donnette-undiplomatically.ngrok-free.dev/generate"
+        url = "*********"
         response = requests.post(url , json = payload , headers = headers,timeout = 60)
         response.raise_for_status()
         
