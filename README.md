@@ -3,7 +3,7 @@ GitPilot is an AI Agent that automates the task of performing GitHub workflows b
 # Tech Stack  
 **Frontend**          : ReactJS  
 **Backend**           : Flask  
-**HuggingFace Model** : [Qwen 7b]('https://huggingface.co/Qwen/Qwen2-7B-Instruct')
+**HuggingFace Model** : [Qwen 7b]("https://huggingface.co/Qwen/Qwen2-7B-Instruct")
 **Voice assistance**  : WebAPI  
 **Containerization**  : Docker
 # Project Architecture   
