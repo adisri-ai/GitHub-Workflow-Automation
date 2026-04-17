@@ -1,0 +1,45 @@
+# Use Python as base
+FROM python:3.9-slim
+
+# Install System Dependencies (Node, Git, GH CLI)
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    gnupg \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
+# Install GitHub CLI
+RUN mkdir -p -m 755 /etc/apt/keyrings \
+    && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+    && chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && apt-get update \
+    && apt-get install -y gh
+
+WORKDIR /app
+
+# Backend Setup
+COPY backend/requirements.txt ./backend/
+RUN pip install -r backend/requirements.txt
+
+# Frontend Setup
+COPY frontend/package.json frontend/package-lock.json ./frontend/
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
+# Go back to root
+WORKDIR /app
+COPY . .
+
+# Expose ports
+EXPOSE 5000
+EXPOSE 5173
+
+# Script to run both Backend and Frontend
+RUN echo '#!/bin/bash\n\
+python -m backend.app & \n\
+cd frontend && npm run dev -- --host' > /start.sh && chmod +x /start.sh
+
+CMD ["/start.sh"]
