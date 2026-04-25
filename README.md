@@ -10,6 +10,13 @@ GitPilot is an AI Agent that automates the task of performing GitHub workflows b
 **Frontend**  : The frontend made using ReactJs framework takes the user input either through prompt or through voice assistance.  
                 In case of voice input, WebAPI converts the voice input into text input and finally the frontend sends its request to the Backend.  
 **Trained-LLM API** : The trained LLM model is hosted on a seperate API   
-**Backend**   : The backend makes a POST request to another API that hosts our trained LLM Model. The API responds with the set of actions to be taken and the                      corresponding parameters. The backend then processes these actions and executes GitHub CLI commands on it's own.
+**Backend**   : The backend makes a POST request to another API that hosts our trained LLM Model. The API responds with the set of actions to be taken and the                      corresponding parameters. The backend then processes these actions and executes GitHub CLI commands on it's own.  
+# How to train the LLM Model  
+1. Open *training.py* file and change paths according to current working directory. 
+Note: change model_path="Qwen/Qwen2-7B" is for the first time use and change it to it stored path for later use.
+3. Run *training.py* for completing training it takes approximately 2 to 3 hours.
+4. Run *api.py* to host the trained LLM model on a seperate API.
+5. Save the link generated
+(Note that for this project I have used free hosting from google colab and hence the link to LLM API is dynamic and keeps changing on every run)
 # References   
 The architecture of the implemented LLM Model draws inspiration fromn [Section 2.2 of this Research Paper](https://github.com/adisri-ai/GitPilot/blob/be57f1c5c69c89c41df52945bbf871540d5d9a67/Referenced_Paper.pdf)
