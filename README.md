@@ -21,8 +21,8 @@ Note: change model_path="Qwen/Qwen2-7B" is for the first time use and change it 
 (Note that for this project I have used free hosting from google colab and hence the link to LLM API is dynamic and keeps changing on every run)
 # How to access the application  
 1. Run the following commands from project **root directory**:   
-   ***docker pull adisrinitw/gitpilot30-gitpilot:latest***
-   ***docker run -it -e EXTERNAL_API_URL=<YOUR_API_URL> -p 5173:5173 -p 5000:5000 adisrinitw/gitpilot30-gitpilot:latest***
+   1. ***docker pull adisrinitw/gitpilot30-gitpilot:latest***
+   2. ***docker run -it -e EXTERNAL_API_URL=<YOUR_API_URL> -p 5173:5173 -p 5000:5000 adisrinitw/gitpilot30-gitpilot:latest***
 3. Click on the vite link to open project frontend. You can now use the agent after authenticating your GitHub.
 # References   
 The architecture of the implemented LLM Model draws inspiration fromn [Section 2.2 of this Research Paper](https://github.com/adisri-ai/GitPilot/blob/be57f1c5c69c89c41df52945bbf871540d5d9a67/Referenced_Paper.pdf)
