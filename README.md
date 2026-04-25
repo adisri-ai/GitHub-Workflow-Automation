@@ -1,5 +1,6 @@
 # Project Overview
-GitPilot is an AI Agent that automates the task of performing GitHub workflows by user prompt and the user no longer needs to remember the hard syntax of GitHub CLI commands. 
+GitPilot is an AI Agent that automates the task of performing GitHub workflows by user prompt and the user no longer needs to remember the hard syntax of GitHub CLI commands.   
+You can access the final Docker Repository from [here](https://hub.docker.com/repository/docker/adisrinitw/gitpilot30-gitpilot/general)
 # Tech Stack  
 **Frontend**          : ReactJS  
 **Backend**           : Flask  
@@ -22,6 +23,6 @@ Note: change model_path="Qwen/Qwen2-7B" is for the first time use and change it 
 1. Run the following commands from project **root directory**:   
    ***docker pull adisrinitw/gitpilot30-gitpilot:latest***
    ***docker run -it -e EXTERNAL_API_URL=<YOUR_API_URL> -p 5173:5173 -p 5000:5000 adisrinitw/gitpilot30-gitpilot:latest***
-3. Click on the link(http://localhost:5173/) to open project frontend. You can now use the agent after authenticating your GitHub.
+3. Click on the vite link to open project frontend. You can now use the agent after authenticating your GitHub.
 # References   
 The architecture of the implemented LLM Model draws inspiration fromn [Section 2.2 of this Research Paper](https://github.com/adisri-ai/GitPilot/blob/be57f1c5c69c89c41df52945bbf871540d5d9a67/Referenced_Paper.pdf)
