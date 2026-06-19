@@ -1,6 +1,11 @@
 # Project Overview
 GitPilot is an AI Agent that automates the task of performing GitHub workflows by user prompt and the user no longer needs to remember the hard syntax of GitHub CLI commands.   
-You can access the final Docker Repository from [here](https://hub.docker.com/repository/docker/adisrinitw/gitpilot30-gitpilot/general)
+You can access the final Docker Repository from [here](https://hub.docker.com/repository/docker/adisrinitw/gitpilot30-gitpilot/general)   
+# Project Features  
+1. **Use Of Natural Language** : The user makes use of natural language prompt to explain the task to be perfromed.
+2. **Feedback using RLHF** : The project uses RLHF to train further upon human feedback of whether the task was performed rightly.
+3. **Voice Assistance** : The user may also give prompts using voice assistance.
+4. **Direct Performance of Action** : The Agent directly performs the action that reflect on your GitHub repository. 
 # Tech Stack  
 **Frontend**          : ReactJS  
 **Backend**           : Flask  
@@ -11,7 +16,7 @@ You can access the final Docker Repository from [here](https://hub.docker.com/re
 **Frontend**  : The frontend made using ReactJs framework takes the user input either through prompt or through voice assistance.  
                 In case of voice input, WebAPI converts the voice input into text input and finally the frontend sends its request to the Backend.  
 **Trained-LLM** : The trained LLM model is hosted on a seperate API.  
-**Backend**   : The backend makes a POST request to another API that hosts our trained LLM Model. The API responds with the set of actions to be taken and the                      corresponding parameters. The backend then processes these actions and executes GitHub CLI commands on it's own. A detailed [Backend Documentation](/BACKEND.MD) can be viewed from here
+**Backend**   : The backend makes a POST request to another API that hosts our trained LLM Model. The API responds with the set of actions to be taken and the                      corresponding parameters. The backend then processes these actions and executes GitHub CLI commands on it's own. A detailed [Backend Documentation](https://github.com/adisri-ai/GitPilot/blob/main/BACKEND.md) can be viewed from here
 # How to train the LLM Model  
 1. Open *training.py* file and change paths according to current working directory. 
 Note: change model_path="Qwen/Qwen2-7B" is for the first time use and change it to it stored path for later use.
