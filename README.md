@@ -139,5 +139,5 @@ The architecture of the implemented LLM Model draws inspiration from **[Section 
 ---
 
 <div align="center">
-<sub>Built with 🤖 and too many GitHub CLI man pages.</sub>
+<sub>Built with GitHub CLI.</sub>
 </div>
